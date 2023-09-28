@@ -11,7 +11,7 @@ class Course extends Model
 
     //make fields fillable for mass assignment
     protected $fillable = ['title', 'description', 'tags', 'duration', 'image','user_id'];
-
+    
     //scope for filtering tags and search
     public function scopeFilter($query, array $filters){
         if($filters['tag'] ?? false){

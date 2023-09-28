@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -45,5 +46,8 @@ class User extends Authenticatable
 
     public function courses(){
         return $this->hasMany(Course::class,'user_id');
+    }
+    public function notification(){
+        return $this->hasMany(Notification::class,'user_id');
     }
 }

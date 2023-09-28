@@ -76,7 +76,7 @@ class CourseController extends Controller
 
     public function destroy(Course $course){
          $course->delete();
-        return redirect('/courses')->with('message', 'Course deleted successfully!');
+        return redirect('/courses/manage')->with('message', 'Course deleted successfully!');
     }
 
     public function manage(){

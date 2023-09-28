@@ -35,7 +35,7 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-
+Route::get('/apply', [UserController::class, 'applyForTeacher'])->middleware('auth');
 
 
 Route::get('/courses', [CourseController::class, 'getAll']);
@@ -58,5 +58,6 @@ Route::get('/courses/manage', [CourseController::class, 'manage'])->middleware('
 
 
 Route::get('/courses/{course}', [CourseController::class, 'getById']);
+
 
 
