@@ -21,8 +21,9 @@ use App\Http\Controllers\CourseController;
 // });
 
 
-Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
+
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 Route::post('/users', [UserController::class, 'store']);
 
@@ -37,6 +38,9 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 Route::get('/apply', [UserController::class, 'applyForTeacher'])->middleware('auth');
 
+Route::post('/requestSend', [UserController::class, 'storeRequest'])->middleware('auth');
+
+Route::get('/adminNotificationPage', [UserController::class, 'showNotification'])->middleware('auth');
 
 Route::get('/courses', [CourseController::class, 'getAll']);
 
