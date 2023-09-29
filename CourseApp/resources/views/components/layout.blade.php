@@ -1,3 +1,6 @@
+@php
+$myNotification = session('notification');
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,18 +30,28 @@
             </ul>
         </nav>
         <div class="reglog">
-            @auth
-                
-            <span>Welcome {{auth()->user()->name}}</span>
-            <a href="/courses/manage">Manage Courses</a>
+           
+           
+           
             
+            @auth
+            
+           @unless (auth()->user()->role === "Admin")
+           <a href="/courses/manage">Manage Courses</a>
+           @else
+           <a href="/adminNotificationPage">Not</a>
+           @if (count($myNotification)>0)
+               
+           {{count($myNotification)}}
+           @endif
+           
+           @endunless
             <form method="POST" action="/logout">
                 @csrf
                 <button type="submit"> 
                     Logout
                 </button>
             </form>
-
             @else
             <a href="/register">Register</a>
             <a href="/login">Login</a>

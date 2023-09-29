@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -13,7 +14,7 @@ class CourseController extends Controller
         
         return view('courses.courses', [
             'heading' => 'Latest Courses',
-            // 'courses' => Course::all()
+            'notifications' => Notification::all(),
             'courses' => Course::latest()->filter(request(['tag', 'search']))->paginate(4)
         ]);
     }
