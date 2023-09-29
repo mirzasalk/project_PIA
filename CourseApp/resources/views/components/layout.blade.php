@@ -19,15 +19,15 @@ $myNotification = session('notification');
     <div id="layoutMain">
     <header>
         <div class="logo">
-            <img src={{ asset('img/logo4.png') }} alt="Cubickly" class="logo">
+            <img src={{ asset('img/logo.png') }} alt="SR" class="logo">
         </div>
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/apply">Apliciraj za predavača</a></li>
-                <li><a href="/courses">Courses</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
+            <div class="meni">
+                <div><a href="/">Početna</a></div>
+                <div><a href="/apply">Apliciraj za predavača</a></div>
+                <div><a href="/courses">Kursevi</a></div>
+                <div><a href="/contact">Kontakt</a></div>
+            </div>
         </nav>
         <div class="reglog">
            
@@ -39,23 +39,28 @@ $myNotification = session('notification');
            @unless (auth()->user()->role === "Admin")
            <a href="/courses/manage">Manage Courses</a>
            @else
-           <a href="/adminNotificationPage">Not</a>
+           <a href="/adminNotificationPage"> <img src={{ asset('img/notification.png') }} alt="SR" class="notificationImg"></a>
+           
            @if (count($myNotification)>0)
-               
+           <a href="/adminNotificationPage" class="notificationDiv">
            {{count($myNotification)}}
+           </a>
            @endif
+          
            
            @endunless
             <form method="POST" action="/logout">
                 @csrf
-                <button type="submit"> 
+                <button type="submit" class="LogoutBtn"> 
                     Logout
                 </button>
             </form>
             @else
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
-
+            <div class="login-regDiv">
+            <a class="login-reg" href="/register">Register</a>
+            <p>/</p>
+            <a class="login-reg" href="/login">Login</a>
+        </div>
             @endauth
         </div>
     </header>

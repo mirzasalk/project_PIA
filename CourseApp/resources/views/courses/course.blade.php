@@ -3,7 +3,7 @@
 <x-card>
 <link rel="stylesheet" href="/css/courses.css">
 
-<img class="image" src="{{$course->image ? asset('storage/' . $course->image) : asset('/storage/images/no-image.jpg')}}" alt="">
+<img class="image" src="{{asset('storage/' . $course->image)}}" alt="SlikaKursa">
 
 <h1>{{$course->title}}</h1>
 

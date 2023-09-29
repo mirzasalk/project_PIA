@@ -26,6 +26,7 @@ class UserController extends Controller
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required|min:6|same:password',
             
         ]);
     $formFields['role']='Korisnik';

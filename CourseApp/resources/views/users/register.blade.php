@@ -1,50 +1,73 @@
+
+<link rel="stylesheet" href={{ asset('css/register.css') }}>
 <x-layout>
-
-    <h2>Register</h2>
-    <p>Create an account to add or enroll in courses</p>
-
+<div id="mainRegister">
+    <div class="formBackground">
+    <h2>Regstruj se</h2>
+    
     <form method="POST" action="/users">
     @csrf
 
-    <label for="name">Name:</label>
-    <input type="text" name="name" placeholder="name" value="{{old('name')}}">
+    <div class="inputDiv">
+    <input type="text" name="name" placeholder="ime" value="{{old('name')}}">
     @error('name')
-        <p class="error">{{$message}}</p>
+
+        <p class="error">Unesete ime</p>
     @enderror
+</div>
+    
 
-    <br> <br>
 
-    <label for="Email">Email:</label>
+
+<div class="inputDiv">
     <input type="email" name="email" placeholder="email" value="{{old('email')}}">
     @error('email')
-        <p class="error">{{$message}}</p>
+        <p class="error">Unesite email adresu</p>
     @enderror
-
-    <br> <br>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" placeholder="password" value="">
+</div>
+<div class="inputDiv">
+    <input type="password" name="password" placeholder="šifra" value="">
     @error('password')
-        <p class="error">{{$message}}</p>
+   
+       @if ($message =="The password field confirmation does not match.")
+       <p class="error">Šifre se ne podudaraju</p>
+       @endif
+       @if($message =="The password field must be at least 6 characters.")
+       <p class="error">Uneli ste manje od 6 karaktera</p>
+       @endif
+       @if($message =="The password confirmation field is required.")
+       <p class="error">Unesite sifru</p>
+       @endif
+        <p class="error">Unesite šifru</p>
     @enderror
-
-    <br> <br>
-
-    <label for="password2">Confirm password:</label>
-    <input type="password" name="password_confirmation" placeholder="confirm password" value="">
+</div>
+<div class="inputDiv">
+    <input type="password" name="password_confirmation" placeholder="potvrdi šifru" value="">
     @error('password_confirmation')
-        <p class="error">{{$message}}</p>
+     
+        @if ($message =="The password confirmation field must match password.")
+        <p class="error">Šifre se ne podudaraju</p>
+        @endif
+        @if($message =="The password confirmation field must be at least 6 characters.")
+        <p class="error">Uneli ste manje od 6 karaktera</p>
+        @endif
+        @if($message =="The password confirmation field is required.")
+        <p class="error">Unesite potvdu sifre</p>
+        @endif
     @enderror
+</div>
+    
 
-    <button type="submit">Sign Up</button>
+    <button type="submit" class="regBtn">Napravi  nalog</button>
 
-    <br> <br> <br>
+  
 
-    <div>
-        <p>Already have an account?</p>
-        <a href="/login">Login</a>
+    <div class="loginLinkDiv">
+        <p>Već imate nalog?</p>
+        <a href="/login">Prijavite se</a>
     </div>
 
     </form>
-
+</div>
+</div>
 </x-layout>

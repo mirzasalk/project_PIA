@@ -4,17 +4,22 @@
     $id = auth()->user()->id;
   
 @endphp
+<link rel="stylesheet" href={{ asset('css/applyForTeacher.css') }}>
 <x-layout>
-    <div>
-        <h1>Vase informacije</h1>
-        <h5><strong>Ime:</strong>{{ $ime}}</h5>
-        <h5><strong>email:</strong>{{ $email}}</h5>
-        <h5><strong>id:</strong>{{ $id}}</h5>
-        <form method="POST" action="/requestSend">
-            @csrf
-            <button>Pošalji zahtev</button>
-        </form>
+    <div id="applyMain">
+        <div class="formDiv">
+           <h1>Vase informacije</h1>
+           <div class="infoDiv">
+             <div><p><strong>Ime:</strong></p><p>{{ $ime}}</p></div>
+             <div><p><strong>Email:</strong></p><p>{{ $email}}</p></div>
+             
+           </div>
+           <form method="POST" action="/requestSend">
+               @csrf
+               <button class="applyBtn">Pošalji zahtev</button>
+           </form>
         
 
+        </div>
     </div>
 </x-layout>

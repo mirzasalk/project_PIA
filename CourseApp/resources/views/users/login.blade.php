@@ -1,38 +1,39 @@
-<x-layout>
 
-    <h2>Login</h2>
-    <p>Log in to add or enroll in courses</p>
+<link rel="stylesheet" href={{ asset('css/login.css') }}>
+<x-layout>
+    <div id="mainLogin">
+        <div class="formBackground">
+    <h2>Prijavi se</h2>
+   
 
     <form method="POST" action="/users/authenticate">
     @csrf
-
-    <br> <br>
-
-    <label for="Email">Email:</label>
-    <input type="email" name="email" placeholder="email" value="{{old('email')}}">
-    @error('email')
-        <p class="error">{{$message}}</p>
-    @enderror
-
-    <br> <br>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" placeholder="password" value="">
-    @error('password')
-        <p class="error">{{$message}}</p>
-    @enderror
-
-    <br> <br>
-
-    <button type="submit">Sign In</button>
-
-    <br> <br> <br>
-
-    <div>
-        <p>Don't have an account?</p>
+    <div class="inputDiv">
+        <input type="email" name="email" placeholder="email adresa" value="{{old('email')}}">
+        @error('email')
+       
+        @if($message == "Invalid credientals")
+           <p class="error">Unesite ispravne podatke</p>
+        @endif
+        @if($message == "The email field is required.")
+           <p class="error">Unesite email adresu</p>
+        @endif
+        @enderror
+    </div>
+    <div class="inputDiv">
+        <input type="password" name="password" placeholder="šifra" value="">
+        @error('password')
+           @if($message =="The password field is required.")
+           <p class="error">Unesite šifru</p>
+           @endif
+        @enderror
+    </div>
+    <button class="logBtn" type="submit">Sign In</button>
+    <div class="registerLinkDiv">
+        <p>Nemate nalog?</p>
         <a href="/register">Sign Up</a>
     </div>
-
     </form>
-
+        </div>
+    </div>
 </x-layout>

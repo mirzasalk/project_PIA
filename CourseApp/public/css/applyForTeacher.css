@@ -1,0 +1,48 @@
+#applyMain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formDiv {
+    height: 50vh;
+    width: 35%;
+    padding: 3em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: "Dancing Script", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.infoDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.infoDiv div {
+    display: flex;
+    font-size: larger;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.infoDiv div p {
+    margin: 0 1em 0 0;
+}
+.applyBtn {
+    height: 3em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+    width: 100%;
+}
+.applyBtn:hover {
+    background-color: #ad9551;
+    color: white;
+}
+form {
+    width: 70%;
+    margin-top: 2em;
+}

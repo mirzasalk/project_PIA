@@ -4,7 +4,7 @@ body {
     /* Postavlja minimalnu visinu na 100vh */
 }
 .logo {
-    width: 10rem;
+    width: 100px;
 }
 #layoutMain {
     display: flex;
@@ -23,20 +23,20 @@ header {
     text-align: center;
     border-bottom: 1px solid rgba(23, 22, 22, 0.122);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px;
-    background-image: linear-gradient(to right, black, gray);
 }
-header nav ul  {
-    list-style: none;
-    padding: 0;
-    float: right; /* Postavljanje navigacije na desnu stranu */
-}
-
-header nav li {
-    display: inline;
-    margin-right: 20px;
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header nav a, .reglog a {
+.meni {
+    display: flex;
+}
+.meni div {
+    margin: 0 0.8em;
+}
+header nav a {
     text-decoration: none;
     color: #000000;
     font-weight: bold;
@@ -44,9 +44,24 @@ header nav a, .reglog a {
     font-family: "Dancing Script", cursive;
 }
 
-
 header nav a:hover {
-    color: #b0d0ef;
+    color: #ad9551;
+}
+.notificationDiv {
+    background-color: #ad9551;
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+    margin: -1.5em 0 0 -1.5em;
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notificationDiv:hover {
+    cursor: pointer;
 }
 
 /* Stilizacija footer-a */
@@ -56,7 +71,6 @@ footer {
     color: #000000;
     text-align: center;
     padding: 10px 0;
-    background-image: linear-gradient(to right, black, gray);
 }
 header .logo {
     font-size: 50px; /* Prilagodite veličinu slova prema potrebi */
@@ -69,8 +83,56 @@ header .logo span {
     display: inline; /* Svako slovo na istom redu */
 }
 
+/* Stilizacija za navigaciju */
+.page-link {
+    color: black;
+}
+.page-link:hover {
+    color: white;
+    background-color: #ad9551;
+}
+.zlatnabg {
+    background-color: #ad9551 !important;
+    border: 0.5px solid grey !important;
+}
+.login-regDiv {
+    padding: 0;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-reg {
+    text-decoration: none !important;
+    color: #000000;
+    font-weight: bold;
+    font-size: x-large;
+    margin: 0 0.5em;
+    font-family: "Dancing Script", cursive;
+}
+
+.login-reg:hover {
+    color: #ad9551 !important;
+}
 .error {
     color: red;
 }
-
+.reglog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reglog p {
+    margin: 0;
+    font-size: larger;
+}
 /* Stilizacija za navigaciju */
+.LogoutBtn {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-family: "Dancing Script", cursive;
+    font-weight: bold;
+    font-size: x-large;
+    margin-left: 2em;
+}
