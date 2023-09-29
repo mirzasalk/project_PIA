@@ -1,5 +1,8 @@
-<x-layout>
-
+ @php
+    session(['notification' => $notifications]); 
+  
+ @endphp
+<x-layout >
 <link rel="stylesheet" href="/css/courses.css">
 
 <h1>{{$heading}}</h1>
