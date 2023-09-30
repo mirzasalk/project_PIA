@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+}
+.aTag {
+    border-radius: 0.2em;
+    background-color: black;
+    width: fit-content;
+    height: 1.7em;
+    color: white;
+    text-decoration: none;
+    padding: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.3em;
+}
+.divForTags {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

@@ -1,13 +1,13 @@
 @props(['tagsProp'])
-
+<link rel="stylesheet" href="/css/course-tags.css">
 @php
- $tags = explode(',', $tagsProp);     
+    $tags = explode(',', $tagsProp);     
 @endphp
 
-<ul>
+<div class="divForTags">
     @foreach ($tags as $tag)
-        <li>
-            <a href="/courses/?tag={{$tag}}">{{$tag}}</a>
-        </li>
+       
+            <a  href="/courses/?tag={{$tag}}"><div class="aTag">{{$tag}}</div></a>
+        
     @endforeach
-</ul>
+</div>

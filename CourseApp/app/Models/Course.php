@@ -27,4 +27,7 @@ class Course extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
+    public function lessons(){
+        return $this->hasMany(Lesson::class,'course_id ');
+    }
 }

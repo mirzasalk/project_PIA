@@ -24,21 +24,22 @@ $myNotification = session('notification');
         <nav>
             <div class="meni">
                 <div><a href="/">Početna</a></div>
+                @auth
+                @if(auth()->user()->role !== "Predavac")
                 <div><a href="/apply">Apliciraj za predavača</a></div>
+                @endif
+                @else
+                <div><a href="/apply">Apliciraj za predavača</a></div>
+                @endauth
+                
                 <div><a href="/courses">Kursevi</a></div>
                 <div><a href="/contact">Kontakt</a></div>
             </div>
         </nav>
         <div class="reglog">
            
-           
-           
-            
-            @auth
-            
-           @unless (auth()->user()->role === "Admin")
-           <a href="/courses/manage">Manage Courses</a>
-           @else
+        @auth
+           @if (auth()->user()->role === "Admin")
            <a href="/adminNotificationPage"> <img src={{ asset('img/notification.png') }} alt="SR" class="notificationImg"></a>
            
            @if (count($myNotification)>0)
@@ -46,9 +47,11 @@ $myNotification = session('notification');
            {{count($myNotification)}}
            </a>
            @endif
-          
+           @endif
+           @if (auth()->user()->role === "Predavac")
+           <a href="/courses/manage" class="manageCoursesTag">Moji kursevi</a>
+           @endif
            
-           @endunless
             <form method="POST" action="/logout">
                 @csrf
                 <button type="submit" class="LogoutBtn"> 
@@ -60,7 +63,7 @@ $myNotification = session('notification');
             <a class="login-reg" href="/register">Register</a>
             <p>/</p>
             <a class="login-reg" href="/login">Login</a>
-        </div>
+             </div>
             @endauth
         </div>
     </header>
@@ -72,7 +75,7 @@ $myNotification = session('notification');
     </main>
 
     <footer>
-        <p>&copy;2023 By Amel Tutic</p>
+        <p>&copy;2023 By Mirza Salković</p>
     </footer>
 
 </div>

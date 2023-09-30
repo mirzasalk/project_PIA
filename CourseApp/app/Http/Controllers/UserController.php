@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Course;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -34,7 +35,19 @@ class UserController extends Controller
     $user = User::create($formFields);
     return redirect('/login')->with('message', 'Uspesno izvrsena registracija');
     }
-    
+   
+    public function changeRole(User $user,Notification $notification){
+        
+       
+        if ($user->role) {
+            $user->update(['role' => 'Predavac']);
+            $notification->delete();
+            return back()->with('message', 'Uspješno odobren zahtjev!');
+            
+        } else {
+            return back()->with('error', 'Nedostajući podaci za ažuriranje uloge!');
+        }
+    } 
     public function storeRequest() {
         $formFields = [
             'user_id' => auth()->user()->id,

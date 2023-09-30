@@ -1,0 +1,36 @@
+.cardMain {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+
+    margin-top: 1em;
+    font-family: "Dancing Script", cursive;
+    font-weight: bold;
+    font-size: x-large;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px;
+}
+.kursTitle {
+    color: black;
+    font-size: 3rem;
+}
+
+.descriptionDiv {
+    text-wrap: wrap;
+    display: flex;
+    width: 100%;
+    text-align: center; /* Prilagodite širinu prema potrebi */
+}
+
+.rightFieldDiv {
+    width: 80%;
+    display: flex;
+    text-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.descriptionDiv p {
+    display: flex;
+    text-wrap: wrap;
+}

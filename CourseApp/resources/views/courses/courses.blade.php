@@ -8,7 +8,7 @@
 
 
 @include('partials._search')
-
+<div class="coursesMain">
 @unless (count($courses) == 0)
 
 @foreach($courses as $course)
@@ -19,7 +19,7 @@
 <p>No courses found</p>
 
 @endunless
-
+</div>
 <div class="paginationLinks">
     {{$courses->links()}}
 </div>

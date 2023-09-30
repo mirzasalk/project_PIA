@@ -46,9 +46,9 @@ class CourseController extends Controller
         }
         $formFields['user_id'] = auth()->id();
         
-        Course::create($formFields);
+        $course = Course::create($formFields);
 
-        return redirect('/courses')->with('message', "Course created successfully!");
+        return view('lessons.lessonsHenlde',['course'=>$course]);
     }
 
     //get edit form

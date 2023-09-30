@@ -1,0 +1,69 @@
+#editMain {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    font-family: "Dancing Script", cursive;
+    padding: 0 2em;
+}
+
+form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.inputDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4em;
+}
+.inputDiv input {
+    width: 100%;
+    font-size: large;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 2em;
+    margin-bottom: 0.5em;
+}
+.uptadeBtnDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.updateBtn {
+    width: 50%;
+    height: 3em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+    margin-top: 1em;
+}
+
+.updateBtn:hover {
+    color: white;
+}
+.divHelperForErrorMassage {
+    width: 79%;
+    height: 4em;
+}
+.inputImgDiv {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.imgAndInputDiv {
+    width: 79%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.izmeniLekcijeDugme {
+    width: 20%;
+}
+.izmeniLekcijeDugme button {
+    height: 2em;
+}

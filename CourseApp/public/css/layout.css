@@ -63,6 +63,17 @@ header nav a:hover {
 .notificationDiv:hover {
     cursor: pointer;
 }
+.manageCoursesTag {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: x-large;
+    font-family: "Dancing Script", cursive;
+}
+.manageCoursesTag:hover {
+    color: #ad9551;
+    cursor: pointer;
+}
 
 /* Stilizacija footer-a */
 footer {
@@ -135,4 +146,7 @@ header .logo span {
     font-weight: bold;
     font-size: x-large;
     margin-left: 2em;
+}
+.LogoutBtn:hover {
+    color: #ad9551;
 }

@@ -1,0 +1,58 @@
+.lekcijaKursa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+}
+.lekcijaKursa div {
+    width: 100%;
+    padding-left: 10em;
+}
+.lekcijaKursa form {
+    height: fit-content;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.inputDivAdd {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 4em;
+}
+
+.inputDivAdd input {
+    width: 100%;
+    font-size: large;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 2em;
+    margin-bottom: 0.5em;
+}
+.textareaDivAdd {
+    height: 10em;
+}
+.saveBtn {
+    height: 3em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}
+.saveBtn:hover {
+    background-color: #ad9551;
+    color: white;
+}
+.endBtn {
+    height: 3em;
+    font-size: larger;
+    background-color: #ad9551;
+    color: white;
+}
+.endBtn:hover {
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}

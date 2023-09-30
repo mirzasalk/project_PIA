@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\NotificationController;
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -27,9 +29,7 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 Route::post('/users', [UserController::class, 'store']);
 
-
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
-
 
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
@@ -41,6 +41,8 @@ Route::get('/apply', [UserController::class, 'applyForTeacher'])->middleware('au
 Route::post('/requestSend', [UserController::class, 'storeRequest'])->middleware('auth');
 
 Route::get('/adminNotificationPage', [UserController::class, 'showNotification'])->middleware('auth');
+
+Route::put('/changeRoleToPrdavac/{user}/{notification}', [UserController::class, 'changeRole'])->middleware('auth');
 
 Route::get('/courses', [CourseController::class, 'getAll']);
 
@@ -56,12 +58,25 @@ Route::get('/courses/{course}/edit' , [CourseController::class, 'edit'])->middle
 
 Route::put('/courses/{course}', [CourseController::class, 'update'])->middleware('auth');
 
+
 Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->middleware('auth');
+
 
 Route::get('/courses/manage', [CourseController::class, 'manage'])->middleware('auth');
 
 
 Route::get('/courses/{course}', [CourseController::class, 'getById']);
 
+Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->middleware('auth');
 
+Route::post('/createLesson/{course}', [LessonController::class, 'store']);
 
+Route::get('/getLessons/{course}', [LessonController::class, 'getAllByCourseId']);
+
+Route::delete('/lessons/{lessons}', [LessonController::class, 'destroy'])->middleware('auth');
+
+Route::get('/showHandleLessons/{lesson}', [LessonController::class, 'showHandleLessonPage'])->middleware('auth');
+
+Route::put('/editLessons/{lesson}', [LessonController::class, 'update'])->middleware('auth');
+
+Route::get('/addLesson/{course}', [LessonController::class, 'show'])->middleware('auth');

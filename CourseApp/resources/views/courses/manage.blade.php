@@ -1,28 +1,35 @@
 @php
 $tag = request('tag')  
 @endphp
+<link rel="stylesheet" href="/css/managecourse.css">
+
 <x-layout>
 
     <div class="userCourses">
-        
+        <div class="dodajBtn">
         <button><a href="/courses/create">Dodaj kurs</a></button>
-    
+        </div>
         @unless ($courses->isEmpty())
             
-        
+        <div class="listaMojihKurseva">
         @foreach ($courses as $item)
         <div class="kursKartica">
-            <h1>{{$item->title}}</h1>
-        <a href="/courses/{{$item->id}}/edit">
-            <button type="submit">Edit</button>
-        </a>
-        <a href="/courses/manage/?tag={{$item->id}}">
-        <button >Delete</button>
-        </a>
+            <img class="image" src="{{asset('storage/' . $item->image)}}" alt="SlikaKursa" style="width:10em;height:10em">
+            <h1 class="titleTag">{{$item->title}}</h1>
+        <div class="btnDiv">
+           <a href="/courses/{{$item->id}}/edit">
+               <button  class="editBtn">Edit</button>
+           </a>
+           <a href="/courses/manage/?tag={{$item->id}} " >
+               <button class="deleteBtn">Delete</button>
+           </a>
+        </div>
+
     
         
 </div>
         @endforeach
+    </div>
         @else
         <div>Nema kurseva</div>
         @endunless
@@ -31,16 +38,21 @@ $tag = request('tag')
     
     @if ($tag)
     <div id="confirmDeleteWindow">
-        <form method="POST" action="/courses/{{$tag}}">
+      <div class="deleteWindowCenterDiv">
+        <h5>Jeste li sigurni da želite da izbrisete kurs?</h5>
+        <div class="deleteWindowCenterDivBtn">
+        <form class="formZaPotvrdu" method="POST" action="/courses/{{$tag}}">
             @csrf
             @method('DELETE')
-            <button type="submit">
-                Confirm
+            <button type="submit" class="ConfirmBtn">
+                Potvrdi
             </button>
         </form>
-        <a href="/courses/manage">
-        <button id="cancelButton">Cancel</button>
-    </a>
+        <a href="/courses/manage" class="aforcancelBtn">
+           <button id="cancelButton">Cancel</button>
+        </a>
+    </div>
+      </div>
     </div>
 @endif
 

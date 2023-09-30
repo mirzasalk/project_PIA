@@ -1,0 +1,138 @@
+.userCourses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.kursKartica {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+.dodajBtn {
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 2em;
+}
+.dodajBtn button {
+    width: 20%;
+    height: 3em;
+    background-color: rgba(0, 0, 0, 0.746);
+    font-size: larger;
+
+    font-family: "Dancing Script", cursive;
+}
+.dodajBtn button:hover {
+    background-color: #ad9551;
+}
+.dodajBtn button a {
+    color: white;
+    text-decoration: none;
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 22%;
+}
+.btnDiv a {
+    width: 49%;
+}
+.editBtn {
+    width: 100%;
+    height: 3em;
+    background-color: rgba(0, 0, 0, 0.746);
+    font-size: larger;
+    font-family: "Dancing Script", cursive;
+    color: white;
+}
+.deleteBtn {
+    width: 100%;
+    height: 3em;
+    background-color: #ad9551;
+    font-size: larger;
+    font-family: "Dancing Script", cursive;
+    color: white;
+}
+.titleTag {
+    border-bottom: 3px solid black;
+}
+#confirmDeleteWindow {
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteWindowCenterDiv {
+    font-family: "Dancing Script", cursive;
+    background-color: white;
+    width: 30%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.deleteWindowCenterDiv h5 {
+    font-size: x-large;
+    font-weight: bold;
+}
+.deleteWindowCenterDivBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.ConfirmBtn {
+    width: 99%;
+    height: 3em;
+    font-size: larger;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+.aforcancelBtn {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+#cancelButton {
+    width: 99%;
+    height: 3em;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #ad9551;
+
+    color: white;
+}
+.listaMojihKurseva {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 50vh;
+}
