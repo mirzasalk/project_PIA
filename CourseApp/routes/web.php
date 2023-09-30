@@ -48,9 +48,9 @@ Route::put('/changeRoleToPrdavac/{user}/{notification}', [UserController::class,
 
 Route::get('/courses', [CourseController::class, 'getAll']);
 
+Route::get('/coursLessonsShow/{course}', [CourseController::class, 'coursLessons']);
 
 Route::get('/courses/create', [CourseController::class, 'create'])->middleware('auth');
-
 
 Route::post('/courses', [CourseController::class, 'store'])->middleware('auth');
 
@@ -86,3 +86,7 @@ Route::get('/addLesson/{course}', [LessonController::class, 'show'])->middleware
 Route::get('/addQuestions/{course}', [QuestionController::class, 'addPageShow'])->middleware('auth');
 
 Route::get('/createNewQuestions/{course}', [QuestionController::class, 'store'])->middleware('auth');
+
+Route::post('/showKviz/{course}', [QuestionController::class, 'showKviz'])->middleware('auth');
+
+Route::put('/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');

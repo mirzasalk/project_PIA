@@ -137,3 +137,22 @@ form {
     overflow-y: scroll;
     max-height: 50vh;
 }
+.infoIcon {
+    display: flex;
+    height: 3em;
+    align-self: self-start;
+}
+.infoIcon:hover {
+    cursor: pointer;
+}
+.showInfoDivMain {
+    position: absolute;
+    top: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+}

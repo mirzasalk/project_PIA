@@ -16,7 +16,9 @@ class Question extends Model
         'answerFour',
         'category',
         'correctAnswer',
-        'course_id' 
+        'course_id',
+        'numberOfCorrectAnswer',
+        'numberOfAnswer'
         
     ];
     public function course(){

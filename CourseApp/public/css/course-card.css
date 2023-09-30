@@ -1,8 +1,7 @@
 .cardMain {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 90%;
-
     margin-top: 1em;
     font-family: "Dancing Script", cursive;
     font-weight: bold;

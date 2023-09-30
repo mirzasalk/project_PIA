@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('answerFour');
             $table->string('category');
             $table->integer('correctAnswer');
+            $table->integer('numberOfCorrectAnswer');
+            $table->integer('numberOfAnswer');
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
         });
     }

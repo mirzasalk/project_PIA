@@ -1,3 +1,4 @@
-<div class="courses" style="width:100%;height:75vh;">
+<div class="courses" style="width:100%;display: flex;
+justify-content: center; ">
     {{$slot}}
 </div>

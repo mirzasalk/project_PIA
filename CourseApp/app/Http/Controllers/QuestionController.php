@@ -24,12 +24,53 @@ class QuestionController extends Controller
             'answerFour' => 'required',
             'category' => 'required',
             'correctAnswer' => 'required',
+            
         ]);
         
         $formFields['course_id'] = $course->id;
+        $formFields['numberOfCorrectAnswer'] = 0;
+        $formFields['numberOfAnswer'] = 0;
+        
         
         Question::create($formFields);
 
         return view('questions.create',['course'=>$course]);
+    }
+    public function showKviz(Request $request, Course $course){
+     
+        return view('quiz.show', [
+            'questionNumber'=>$request->query('questionNumber')+1,
+            'userCorrectAnswe'=>$request->query('userCorrectAnswe'),
+            'showNextDiv'=>0,
+            'course' => $course,
+            'questions' => Question::all()->where('course_id', $course->id)
+    ->where('category', $request->category),    
+        ]);
+    }
+    public function checkAnswer(Request $request, Course $course){
+        $question = Question::find($request->query('questionId'));
+        
+       $request->validate([
+        'answer' => 'required',
+    ]);
+    $checkAnswer = ($request->answer == $question->correctAnswer) ? 1 : 0;
+   
+    $qNum = $request->query('qNum');
+
+    $updateInfo=['numberOfCorrectAnswer'=>$checkAnswer + $question->numberOfCorrectAnswer,
+    'numberOfAnswer'=>$question->numberOfAnswer + 1
+];
+    $question->update($updateInfo);
+    
+    return view('quiz.show', [
+            'questionNumber' => $qNum,
+            'showNextDiv'=>1,
+            'userAnswer'=>$request->answer,
+            'userCorrectAnswe'=>$request->query('userCorrectAnswe')+ $checkAnswer,
+            'course' => $course,
+            'questions' => Question::where('course_id', $course->id)
+    ->where('category', $question->category)
+    ->get(),    
+        ]);
     }
 }

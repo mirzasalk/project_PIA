@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Lesson;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -82,5 +83,11 @@ class CourseController extends Controller
 
     public function manage(){
         return view('courses.manage',['courses'=>auth()->user()->courses()->get()]);
+    }
+
+    public function coursLessons(Course $course){
+        return view('courses.lessons',['course'=>$course,
+        'lessons' =>Lesson::where('course_id',$course->id)->get()
+    ]);
     }
 }

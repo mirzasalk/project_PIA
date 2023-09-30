@@ -37,7 +37,6 @@ form {
 }
 .logBtn:hover {
     background-color: #ad9551;
-    color: white;
 }
 .registerLinkDiv {
     display: flex;
