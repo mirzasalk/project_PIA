@@ -1,0 +1,118 @@
+#main {
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Dancing Script", cursive;
+}
+.NoLessonsDiv {
+    width: 100%;
+    height: 50vh;
+}
+.dodajBtn {
+    height: 3em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+    margin-bottom: 1em;
+}
+.dodajBtn:hover {
+    background-color: #ad9551;
+}
+#listaLekcija {
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-height: 55vh;
+}
+.lessonsCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 0.5em;
+}
+.title {
+    width: 30%;
+}
+.contentDiv {
+    width: 30%;
+    height: 8.5em;
+    overflow-y: scroll;
+}
+.buttonsDiv {
+    display: flex;
+    flex-direction: column;
+}
+.buttonsDiv .changeCardBtn {
+    height: 2em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.buttonsDiv .deleteCardBtn {
+    height: 2em;
+    font-size: larger;
+    background-color: #ad9551;
+    color: white;
+    margin-bottom: 1em;
+    width: 100%;
+}
+#mainDelete {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+.deleteCenter {
+    font-family: "Dancing Script", cursive;
+    background-color: white;
+    padding: 1em;
+    width: 30%;
+    height: 30vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.deleteCenter .deleteBtnDiv {
+    margin-top: 3em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: start;
+}
+.deleteBtnDiv #cancelButton {
+    height: 2em;
+    font-size: larger;
+    background-color: #ad9551;
+    color: white;
+    margin-bottom: 1em;
+    width: 100%;
+}
+.deleteBtnDiv form {
+    background-color: #ad9551;
+    width: 49% !important;
+    height: 2em;
+}
+form .deleteBtn {
+    height: 2em;
+    font-size: larger;
+    background-color: black;
+    color: white;
+    margin-bottom: 1em;
+    width: 100%;
+}
+.deleteBtnDiv a {
+    width: 49%;
+}

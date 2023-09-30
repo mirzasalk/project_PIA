@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Question;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Course extends Model
 {
@@ -29,5 +30,8 @@ class Course extends Model
     }
     public function lessons(){
         return $this->hasMany(Lesson::class,'course_id ');
+    }
+    public function questions(){
+        return $this->hasMany(Question::class,'course_id ');
     }
 }

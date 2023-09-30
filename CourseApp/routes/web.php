@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\QuestionController;
 use App\Models\Course;
+use App\Models\Question;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
@@ -80,3 +82,7 @@ Route::get('/showHandleLessons/{lesson}', [LessonController::class, 'showHandleL
 Route::put('/editLessons/{lesson}', [LessonController::class, 'update'])->middleware('auth');
 
 Route::get('/addLesson/{course}', [LessonController::class, 'show'])->middleware('auth');
+
+Route::get('/addQuestions/{course}', [QuestionController::class, 'addPageShow'])->middleware('auth');
+
+Route::get('/createNewQuestions/{course}', [QuestionController::class, 'store'])->middleware('auth');

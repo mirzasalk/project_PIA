@@ -3,10 +3,12 @@
 <x-layout>
   <div id="editMain">
     <div class="izmeniLekcijeDugme">
-    <form method="get" action="/getLessons/{{$course->id}}">
+    <a href="/getLessons/{{$course->id}}">
         <button type="submit" class="updateBtn">Izmeni lekcije</button>
-    </form>
+    </a>
+    <a href="/addQuestions/{{$course->id}}"><button class="updateBtn">Dodaj pitanja</button></a>
 </div>
+
     
     <form method="POST" action="/courses/{{$course->id}}" enctype="multipart/form-data">
         @csrf

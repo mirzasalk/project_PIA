@@ -60,9 +60,9 @@ $myNotification = session('notification');
             </form>
             @else
             <div class="login-regDiv">
-            <a class="login-reg" href="/register">Register</a>
+            <a class="login-reg" href="/register">Registracija</a>
             <p>/</p>
-            <a class="login-reg" href="/login">Login</a>
+            <a class="login-reg" href="/login">Prijava</a>
              </div>
             @endauth
         </div>

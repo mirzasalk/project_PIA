@@ -1,0 +1,74 @@
+.questionCreateMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+    font-size: large;
+}
+.questionCreateMain form {
+    padding: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.inputDiv {
+    width: 100%;
+    height: 4em;
+}
+.inputDiv input {
+    width: 100%;
+
+    font-size: large;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 2em;
+
+    margin-bottom: 0.5em;
+}
+.submitBtn {
+    margin-top: 0.5em;
+    height: 3em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}
+.submitBtn:hover {
+    background-color: #ad9551;
+}
+.firstTwoQuestionsField {
+    display: flex;
+    justify-content: space-between;
+}
+.lastTwoQuestionsField {
+    display: flex;
+    justify-content: space-between;
+}
+.questionsInputDiv {
+    width: 49%;
+    height: 4em;
+}
+.questionsInputDiv input {
+    width: 100%;
+    font-size: large;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 2em;
+    margin-bottom: 0.5em;
+}
+.endBtnDiv {
+    width: 90%;
+    display: flex;
+    justify-content: start;
+}
+.endBtn {
+    height: 2em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}
+.endBtn:hover {
+    background-color: #ad9551;
+}

@@ -43,7 +43,7 @@ form {
 }
 
 .updateBtn:hover {
-    color: white;
+    background-color: #ad9551;
 }
 .divHelperForErrorMassage {
     width: 79%;

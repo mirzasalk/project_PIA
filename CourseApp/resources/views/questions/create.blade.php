@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/css/questionCreate.css">
+<x-layout>
+    <div class="questionCreateMain">
+        <div class="endBtnDiv">
+        <a href="/courses/manage"><button class="endBtn">Završi sa dodavanjem</button></a>
+        </div>
+    <form action="/createNewQuestions/{{$course->id}}">
+        @csrf
+        <h2>Kreirajte novo pitanje</h2>
+        <div class="inputDiv">
+           <input type="text" name="question" placeholder="Unesite pitanje">
+           @error('question')
+               <p class="error">{{$message}}</p>
+           @enderror
+        </div>
+        <div class="firstTwoQuestionsField">
+            <div class="questionsInputDiv">
+               <input type="text" name="answerOne" placeholder="Unesite prvi odgovor">
+               @error('answerOne')
+                   <p class="error">{{$message}}</p>
+               @enderror
+            </div>
+            <div class="questionsInputDiv">
+               <input type="text" name="answerTwo" placeholder="Unesite drugi odgovor">
+               @error('answerTwo')
+                  <p class="error">{{$message}}</p>
+               @enderror
+            </div>
+        </div>
+        <div class="lastTwoQuestionsField">
+            <div class="questionsInputDiv">
+               <input type="text" name="answerThree" class="answerThree" placeholder="Unesite treci odgovor">
+               @error('answerThree')
+                  <p class="error">{{$message}}</p>
+               @enderror
+            </div>
+            <div class="questionsInputDiv">
+               <input type="text" name="answerFour" placeholder="Unesite cetvrti odgovor">
+               @error('answerFour')
+                  <p class="error">{{$message}}</p>
+               @enderror
+            </div>
+        </div>
+        <div class="inputDiv">
+           <input type="number" name="correctAnswer" placeholder="Unesite broj tacnog odgovora">
+           @error('correctAnswer')
+               <p class="error">{{$message}}</p>
+           @enderror
+        </div>
+        <div class="checkLevelDiv">
+            <label for="category"></label>
+            <select name="category" id="category">
+                <option value="Lako">Lako</option>
+                <option value="Srednje">Srednje</option>
+                <option value="Tesko">Teško</option>
+            </select>
+            @error('category')
+            <p class="error">{{$message}}</p>
+        @enderror
+        </div>
+        <button class="submitBtn" type="submit">Pošalji</button>
+    </form>
+</div>
+</x-layout>
