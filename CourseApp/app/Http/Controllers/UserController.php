@@ -108,9 +108,23 @@ class UserController extends Controller
             return redirect('/courses')->with('message', 'You are logged in!');
         }
         return back()->withErrors(['email' => 'Invalid credientals'])->onlyInput('email');
-    }
+    } 
     public function showNotification(){
 
         return view('users.adminNotificationPage',['notifications' => Notification::all()]);
     }
+    public function showContact(){
+        return view('showContact');
+    }
+    public function showKorisnici(){
+        
+          return view('showKorisnici',['users'=> User::latest()->filter(request(['search']))->get()]);
+    }
+    public function destroy(User $user){
+        $poruka = "Korsnik ". $user->name. " je uspesno obrisan!";
+        
+        $user->delete();
+       return redirect('/korisnici')->with('message', $poruka );
+   }
+    
 }

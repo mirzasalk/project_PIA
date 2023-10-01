@@ -36,7 +36,15 @@ $myNotification = session('notification');
                 @endauth
                 
                 <div><a href="/courses">Kursevi</a></div>
-                <div><a href="/contact">Kontakt</a></div>
+                
+                <div><a href="/kontakt">Kontakt</a></div>
+                
+                @auth
+                
+                @if(auth()->user()->role =="Admin")
+                <div><a href="/korisnici">Korisnici</a></div>
+                @endif
+                @endauth
             </div>
         </nav>
         <div class="reglog">

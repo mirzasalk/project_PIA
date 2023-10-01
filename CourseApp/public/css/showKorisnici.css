@@ -1,0 +1,64 @@
+.main {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Dancing Script", cursive;
+}
+.listaKorisnika {
+    width: 90%;
+    height: 60vh;
+    background-color: white;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1em;
+}
+.userCard {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+.imeDiv {
+    width: 30%;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.emailDiv {
+    width: 30%;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.ulogaDiv {
+    width: 15%;
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.formDiv {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formDiv button {
+    font-size: x-large;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+    width: 90%;
+    height: 3em;
+}
+.formDiv button:hover {
+    background-color: #ad9551;
+}

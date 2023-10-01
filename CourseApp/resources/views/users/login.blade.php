@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href={{ asset('css/infoPage.css') }}>
+<link rel="stylesheet" href={{ asset('css/login.css') }}>
 <x-layout>
     <div id="mainLogin">
         <div class="formBackground">

@@ -11,7 +11,8 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+     
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -44,10 +45,19 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    
     public function courses(){
         return $this->hasMany(Course::class,'user_id');
     }
     public function notification(){
         return $this->hasMany(Notification::class,'user_id');
+    }
+    public function scopeFilter($query, array $filters){
+       
+        if($filters['search'] ?? false){
+            $query->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('email', 'like', '%' . request('search') . '%')
+                ->orWhere('role', 'like', '%' . request('search') . '%');
+        }
     }
 }

@@ -27,6 +27,13 @@ use App\Http\Controllers\CourseController;
 
 
 
+Route::get('/', [UserController::class, 'showHome']);
+Route::get('/kontakt', [UserController::class, 'showContact']);
+
+
+
+Route::get('/korisnici', [UserController::class, 'showKorisnici']);
+
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 
@@ -48,6 +55,8 @@ Route::get('/adminNotificationPage', [UserController::class, 'showNotification']
 Route::get('/changePass', [UserController::class, 'changePass'])->middleware('auth');
 
 Route::put('/changeRoleToPrdavac/{user}/{notification}', [UserController::class, 'changeRole'])->middleware('auth');
+
+Route::delete('/userDelete/{user}', [UserController::class, 'destroy']);
 
 Route::get('/courses', [CourseController::class, 'getAll']);
 
