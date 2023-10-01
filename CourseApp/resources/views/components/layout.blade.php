@@ -19,7 +19,7 @@ $myNotification = session('notification');
     <div id="layoutMain">
     <header>
         <div class="logo">
-            <img src={{ asset('img/logo.png') }} alt="SR" class="logo">
+           <a href="/courses"> <img src={{ asset('img/logo.png') }} alt="SR" class="logo"></a>
         </div>
         <nav>
             <div class="meni">

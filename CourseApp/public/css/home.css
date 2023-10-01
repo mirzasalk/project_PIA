@@ -1,0 +1,110 @@
+#main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+}
+.imgDiv {
+    width: 80%;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgDiv img {
+    border-radius: 0.5em;
+}
+.naslov {
+    position: absolute;
+    top: 6em;
+    z-index: 1;
+    font-size: 4rem;
+    color: white;
+}
+.onama {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 3em 0 2em;
+    width: 80%;
+    height: fit-content;
+    pad: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.onama h2 {
+    margin-top: 2em;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+.onama h3 {
+    width: 70%;
+}
+
+.ocekivanjaNaslov {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+    border-bottom: 3px dotted black;
+}
+.ocekivanja {
+    width: 70%;
+    display: flex;
+}
+.noviKursevi {
+    display: flex;
+    justify-content: start;
+    padding: 2em;
+    width: 80%;
+    min-height: 5em;
+    max-height: 90vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow-y: scroll;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+}
+.nemaKurseva {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+.karticaKursa {
+    display: flex;
+    padding: 1em;
+    margin: 0 1.1em;
+    margin-bottom: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    min-height: 30vh;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.imgDivKurs {
+    width: 20%;
+}
+.info {
+    width: 75%;
+}
+.info h2 {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+.datum {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.datum strong {
+    margin: 0;
+    font-size: x-large;
+    margin-right: 0.5em;
+}

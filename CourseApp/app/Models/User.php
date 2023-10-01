@@ -52,6 +52,9 @@ class User extends Authenticatable
     public function notification(){
         return $this->hasMany(Notification::class,'user_id');
     }
+    public function reqistration(){
+        return $this->hasMany(CourseRegistration::class,'user_id ');
+    }
     public function scopeFilter($query, array $filters){
        
         if($filters['search'] ?? false){

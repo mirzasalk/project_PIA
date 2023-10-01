@@ -119,7 +119,7 @@ class UserController extends Controller
     public function showKorisnici(){
         
           return view('showKorisnici',['users'=> User::latest()->filter(request(['search']))->get()]);
-    }
+        }
     public function destroy(User $user){
         $poruka = "Korsnik ". $user->name. " je uspesno obrisan!";
         
@@ -127,4 +127,9 @@ class UserController extends Controller
        return redirect('/korisnici')->with('message', $poruka );
    }
     
+   public function showHome(){
+       $courses = Course::latest()->get();
+       
+       return view('showHome',['courses'=> $courses]);
+   }
 }

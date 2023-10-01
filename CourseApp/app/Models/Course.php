@@ -34,4 +34,7 @@ class Course extends Model
     public function questions(){
         return $this->hasMany(Question::class,'course_id ');
     }
+    public function reqistration(){
+        return $this->hasMany(CourseRegistration::class,'course_id ');
+    }
 }
