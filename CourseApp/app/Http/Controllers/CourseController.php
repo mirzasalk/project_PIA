@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\Notification;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -24,6 +25,13 @@ class CourseController extends Controller
     public function getById(Course $course){
         return view('courses.course', [
             'course' => $course
+        ]);
+    }
+    public function showInfo(Course $course){
+
+        return view('courses.showInfo', [
+            'course' => $course,
+            'questions'=>Question::where('course_id',$course->id)->get()
         ]);
     }
 

@@ -26,7 +26,7 @@ $info = request('info')
            </a>
         </div>
         <div class="infoIcon">
-            <a href="/courses/manage/?info=1"><img class="image" src="{{asset('storage/images/info.png')}}" alt="SlikaKursa" style="width:1.5em;height:1.5em">
+            <a href="/showInfo/{{$item->id}}"><img class="image" src="{{asset('storage/images/info.png')}}" alt="SlikaKursa" style="width:1.5em;height:1.5em">
             </a>
         </div>
 </div>
@@ -57,13 +57,8 @@ $info = request('info')
       </div>
     </div>
 @endif
-@if ($info)
-<div class="showInfoDivMain">
-   <div class="showInfoDiv">
 
-   </div>
-</div>
     
-@endif
+
     
 </x-layout>

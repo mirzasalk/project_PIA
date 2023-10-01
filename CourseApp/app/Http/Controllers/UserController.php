@@ -73,6 +73,27 @@ class UserController extends Controller
     public function login(){
         return view('users.login');
     }
+    public function showUserInfo(){
+        return view('users.infoPage');
+    }
+
+    public function changePass(Request $request) {
+        if (password_verify($request->oldPass, auth()->user()->password)) {
+            $request->validate([
+                'newPass' => 'required|min:6',
+            ]);
+    
+            $user = User::find(auth()->user()->id);
+            $user->update([
+                'password' => bcrypt($request->newPass) // Ispravna sintaksa za ažuriranje lozinke
+            ]);
+    
+            return redirect('/userProfile')->with('message', 'Uspešno promenjena šifra'); // Ispravili smo "Uspesno" i "šifra" pravilnim slovima
+        } else {
+            return redirect('/userProfile')->with('message', 'Uneli ste pogrešnu lozinku');
+        }
+    }
+    
 
     //log in user
     public function authenticate(Request $request){

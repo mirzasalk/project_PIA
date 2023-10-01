@@ -25,8 +25,11 @@ $myNotification = session('notification');
             <div class="meni">
                 <div><a href="/">Početna</a></div>
                 @auth
-                @if(auth()->user()->role !== "Predavac")
-                <div><a href="/apply">Apliciraj za predavača</a></div>
+                @if(auth()->user()->role !== "Predavac" )
+                    @if ( auth()->user()->role !== "Admin")
+                    <div><a href="/apply">Apliciraj za predavača</a></div>
+                        
+                    @endif
                 @endif
                 @else
                 <div><a href="/apply">Apliciraj za predavača</a></div>
@@ -37,6 +40,7 @@ $myNotification = session('notification');
             </div>
         </nav>
         <div class="reglog">
+        <a href="/userProfile"> <img src={{ asset('/storage/images/profile.png') }} alt="SR" class="notificationImg" ></a>
            
         @auth
            @if (auth()->user()->role === "Admin")

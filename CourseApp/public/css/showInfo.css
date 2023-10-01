@@ -1,0 +1,121 @@
+#mainShow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    font-family: "Dancing Script", cursive;
+}
+.naslov {
+    width: 95%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: start;
+}
+#mainShow h1 {
+    margin-top: 1em;
+}
+.listaPitanjaDiv {
+    padding: 1em;
+    width: 80%;
+    max-height: 70vh;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1em;
+}
+.naslovCategori {
+    border-bottom: 1px solid black;
+}
+.questionDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.qId {
+    width: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.qPitanje {
+    min-width: 30%;
+    /* min-width: 30%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.qKategorija {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.qUspešnost {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imeKolone {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+.qBtns {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+.qBtns a {
+    width: 100%;
+}
+.qBtns form {
+    width: 100%;
+}
+.qChangeBtn {
+    width: 100%;
+    height: 3em;
+    margin-bottom: 0.2em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}
+.qDeleteBtn {
+    width: 100%;
+    height: 3em;
+    margin-bottom: 0.2em;
+    font-size: larger;
+    background-color: #ad9551;
+    color: white;
+}
+.dodajBtn {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+.dodajBtn button {
+    width: 20%;
+    height: 3em;
+    margin-bottom: 0.2em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}
+.dodajBtn button:hover {
+    background-color: #ad9551;
+}
+.dodajBtn button a {
+    color: white;
+    text-decoration: none;
+}

@@ -156,3 +156,9 @@ form {
     height: 100vh;
     backdrop-filter: blur(5px);
 }
+.showInfoDiv {
+    width: 60%;
+    height: 60vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

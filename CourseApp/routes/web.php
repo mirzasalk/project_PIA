@@ -29,12 +29,14 @@ use App\Http\Controllers\CourseController;
 
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
+
 Route::post('/users', [UserController::class, 'store']);
 
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
+Route::get('/userProfile', [UserController::class, 'showUserInfo'])->middleware('auth');
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
@@ -43,6 +45,7 @@ Route::get('/apply', [UserController::class, 'applyForTeacher'])->middleware('au
 Route::post('/requestSend', [UserController::class, 'storeRequest'])->middleware('auth');
 
 Route::get('/adminNotificationPage', [UserController::class, 'showNotification'])->middleware('auth');
+Route::get('/changePass', [UserController::class, 'changePass'])->middleware('auth');
 
 Route::put('/changeRoleToPrdavac/{user}/{notification}', [UserController::class, 'changeRole'])->middleware('auth');
 
@@ -69,13 +72,15 @@ Route::get('/courses/manage', [CourseController::class, 'manage'])->middleware('
 
 Route::get('/courses/{course}', [CourseController::class, 'getById']);
 
+Route::get('/showInfo/{course}', [CourseController::class, 'showInfo']);
+
 Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy'])->middleware('auth');
 
 Route::post('/createLesson/{course}', [LessonController::class, 'store']);
 
 Route::get('/getLessons/{course}', [LessonController::class, 'getAllByCourseId']);
 
-Route::delete('/lessons/{lessons}', [LessonController::class, 'destroy'])->middleware('auth');
+Route::delete('/questionsDelete/{{$item->id}}', [LessonController::class, 'destroy'])->middleware('auth');
 
 Route::get('/showHandleLessons/{lesson}', [LessonController::class, 'showHandleLessonPage'])->middleware('auth');
 
@@ -90,3 +95,14 @@ Route::get('/createNewQuestions/{course}', [QuestionController::class, 'store'])
 Route::post('/showKviz/{course}', [QuestionController::class, 'showKviz'])->middleware('auth');
 
 Route::put('/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');
+
+Route::delete('/questionsDelete/{question}', [QuestionController::class, 'destroy'])->middleware('auth');
+
+Route::get('/showEdit/{question}', [QuestionController::class, 'showEdit'])->middleware('auth');
+
+Route::get('/addQuestionsSecond/{course}', [QuestionController::class, 'addPageShowSecond'])->middleware('auth');
+
+Route::get('/createNewQuestionsSecond/{course}', [QuestionController::class, 'storeSecond'])->middleware('auth');
+
+Route::put('/updateQuestions/{course}', [QuestionController::class, 'update'])->middleware('auth');
+

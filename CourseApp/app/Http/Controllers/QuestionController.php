@@ -73,4 +73,67 @@ class QuestionController extends Controller
     ->get(),    
         ]);
     }
+
+    public function destroy(Request $request,Question $question){
+        $course = Course::find($request->query('courseId'));
+        
+        $question->delete();
+        return view('courses.showInfo', [
+            'course' => $course,
+            'questions'=>Question::where('course_id',$course->id)->get()
+        ]);
+   }
+   public function showEdit(Question $question){
+    $course = Course::find($question->course_id);
+    return view('questions.edit',['question'=>$question,'course'=>$course]);
+ }
+ public function update(Request $request, Course $course){
+  
+    $question = Question::find($request->query('qId'));
+    $formFields = $request->validate([
+        'question' => ['required'],
+        'answerOne' => 'required',
+        'answerTwo' => 'required',
+        'answerThree' => 'required',
+        'answerFour' => 'required',
+        'category' => 'required',
+        'correctAnswer' => 'required',
+    ]);
+   
+    $question->update($formFields);
+    
+    return view('courses.showInfo', [
+        'course' => $course,
+        'questions'=>Question::where('course_id',$course->id)->get()
+    ]);
+}
+public function addPageShowSecond(Course $course){
+    return view('questions.createSecond',['course'=>$course]);
+ }
+
+ public function storeSecond(Request $request, Course $course){
+       
+    $formFields = $request->validate([
+        'question' => ['required', Rule::unique('questions', 'question')],
+        'answerOne' => 'required',
+        'answerTwo' => 'required',
+        'answerThree' => 'required',
+        'answerFour' => 'required',
+        'category' => 'required',
+        'correctAnswer' => 'required',
+        
+    ]);
+    
+    $formFields['course_id'] = $course->id;
+    $formFields['numberOfCorrectAnswer'] = 0;
+    $formFields['numberOfAnswer'] = 0;
+    
+    
+    Question::create($formFields);
+
+    return view('courses.showInfo', [
+        'course' => $course,
+        'questions'=>Question::where('course_id',$course->id)->get()
+    ]);
+}
 }
