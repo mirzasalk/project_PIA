@@ -2,7 +2,7 @@
 <x-layout>
     <div id="editQMain">
         
-        <form method="post" action="/updateQuestions/{{$course->id}}/?qId={{$question->id}}">
+        <form method="get" action="/updateQuestions/{{$course->id}}/?qId={{$question->id}}">
             @csrf
             
             <h2>Izmenite pitanje koje ima id: {{$question->id}}<strong></strong></h2>
