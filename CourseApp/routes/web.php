@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\LessonController;
-use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\QuestionController;
 use App\Models\Course;
 use App\Models\Question;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\CourseRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,11 +30,14 @@ use App\Http\Controllers\CourseController;
 
 
 Route::get('/', [UserController::class, 'showHome']);
+Route::post('/', [NewsController::class, 'store']);
 Route::get('/kontakt', [UserController::class, 'showContact']);
 
 
 
 Route::get('/korisnici', [UserController::class, 'showKorisnici']);
+
+Route::get('/addNews', [NewsController::class, 'addNews']);
 
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
@@ -80,6 +85,7 @@ Route::get('/courses/manage', [CourseController::class, 'manage'])->middleware('
 
 
 Route::get('/courses/{course}', [CourseController::class, 'getById']);
+Route::get('/coursesReg/{course}', [CourseController::class, 'getByIdReg']);
 
 Route::get('/showInfo/{course}', [CourseController::class, 'showInfo']);
 
@@ -103,7 +109,7 @@ Route::get('/createNewQuestions/{course}', [QuestionController::class, 'store'])
 
 Route::post('/showKviz/{course}', [QuestionController::class, 'showKviz'])->middleware('auth');
 
-Route::put('/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');
+Route::match(['post', 'put'], '/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');
 
 Route::delete('/questionsDelete/{question}', [QuestionController::class, 'destroy'])->middleware('auth');
 
@@ -114,4 +120,8 @@ Route::get('/addQuestionsSecond/{course}', [QuestionController::class, 'addPageS
 Route::get('/createNewQuestionsSecond/{course}', [QuestionController::class, 'storeSecond'])->middleware('auth');
 
 Route::put('/updateQuestions/{course}', [QuestionController::class, 'update'])->middleware('auth');
+
+Route::put('/registration/{course}', [CourseRegistrationController::class, 'store'])->middleware('auth');
+
+Route::delete('/izbrisiReg/{course}', [CourseRegistrationController::class, 'destroy'])->middleware('auth');
 

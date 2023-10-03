@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseRegistration;
 use App\Models\Lesson;
 use App\Models\Notification;
 use App\Models\Question;
@@ -23,13 +24,35 @@ class CourseController extends Controller
 
     //get a single course
     public function getById(Course $course){
+        
+        $registration = CourseRegistration::where('course_id', $course->id)
+            ->where('user_id', auth()->user()->id)
+            ->first(); // Dohvatamo prvu registraciju koja zadovoljava uslove
+    
+    
         return view('courses.course', [
-            'course' => $course
+            'course' => $course,
+            'registrations' => $registration
+        ]);
+    }
+    public function getByIdReg(Course $course){
+        
+       
+    
+        return view('courses.course', [
+            'course' => $course,
+            
         ]);
     }
     public function showInfo(Course $course){
+       
+        $registration = CourseRegistration::where('course_id', $course->id)
+            ->where('user_id', auth()->user()->id)
+            ->get();
+       
 
         return view('courses.showInfo', [
+            'registration'=>$registration,
             'course' => $course,
             'questions'=>Question::where('course_id',$course->id)->get()
         ]);
@@ -90,7 +113,7 @@ class CourseController extends Controller
     }
 
     public function manage(){
-        return view('courses.manage',['courses'=>auth()->user()->courses()->get()]);
+       return view('courses.manage',['courses'=>auth()->user()->courses()->get()]);
     }
 
     public function coursLessons(Course $course){

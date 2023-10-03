@@ -16,6 +16,14 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('course_title');
+            $table->longText('course_description');
+            $table->string('course_tags');
+            $table->integer('course_duration');
+            $table->string('course_image')->nullable();
+            $table->string('user_name');
+            $table->string('user_role');
+            $table->string('user_email');
         });
     }
 

@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    font-family: "Dancing Script", cursive;
+}
+.center {
+    margin-top: 3em;
+    width: 40%;
+    height: fit-content;
+    padding: 2em;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    border-bottom: 1px solid black;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.inputs input {
+    width: 100%;
+
+    font-size: large;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 2em;
+
+    margin-bottom: 0.5em;
+}
+.addNewsBtn {
+    margin-top: 1em;
+    width: 50%;
+    height: 3em;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.746);
+    color: white;
+}

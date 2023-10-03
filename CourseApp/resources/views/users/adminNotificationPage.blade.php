@@ -1,10 +1,14 @@
 @php
+
 $tag = request('tag') ; 
 session(['notification' => $notifications]); 
 @endphp
 <link rel="stylesheet" href={{ asset('css/adminNotification.css') }}>
 <x-layout>
+   
+    <div class="main">
     <div class="adminNotificationMain">
+        <h1 class="h1Zahtevi">Zahtevi za predavaca</h1>
     @foreach ($notifications as $item)
         <div class="notificationCardDiv">
             <p><strong>{{$item->user_name}}</strong> je poslao zahtev za predavača</p>
@@ -44,4 +48,8 @@ session(['notification' => $notifications]);
   </div>
 </div>
 @endif
+
+
+    
+</div>
 </x-layout>

@@ -1,12 +1,28 @@
 p {
     margin: 0;
 }
+.main {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    flex-direction: column;
+}
+.h1Zahtevi {
+    width: 90%;
+    border-bottom: 1px solid black;
+}
 .adminNotificationMain {
-    width: 100%;
+    padding: 2em 0 1em 0;
+    overflow-y: scroll;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    height: 60vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .notificationCardDiv {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

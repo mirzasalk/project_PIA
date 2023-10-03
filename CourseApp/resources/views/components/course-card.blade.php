@@ -5,7 +5,12 @@
     <img class="image" src="{{$course->image ? asset('storage/' . $course->image) : asset('/storage/images/no-image.jpg')}}" alt="" style="width: 10em;height:10em;">
     <div class="rightFieldDiv">
         <h2>
+          @auth
             <a class="kursTitle" href="/courses/{{$course->id}}">{{$course->title}}</a>
+            @else
+            <a class="kursTitle" href="/coursesReg/{{$course->id}}">{{$course->title}}</a>
+
+          @endauth
         </h2>
         <div class="descriptionDiv">
            <p>

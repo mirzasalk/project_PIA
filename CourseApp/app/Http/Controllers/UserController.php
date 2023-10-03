@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Notification;
@@ -129,7 +130,10 @@ class UserController extends Controller
     
    public function showHome(){
        $courses = Course::latest()->get();
+       $newses = News::latest()->get();
        
-       return view('showHome',['courses'=> $courses]);
+       return view('showHome',['courses'=> $courses,'newses'=>$newses]);
    }
+  
+
 }

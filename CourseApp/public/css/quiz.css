@@ -123,3 +123,20 @@
 .resultsDiv a {
     text-decoration: none;
 }
+.pomoc {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.pomoc button {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em 1em;
+    background-color: rgba(0, 0, 0, 0.746);
+    text-decoration: none;
+    color: white;
+}
+.pomoc button:hover {
+    background-color: #ad9551;
+}

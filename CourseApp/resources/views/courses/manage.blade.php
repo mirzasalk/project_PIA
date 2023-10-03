@@ -1,6 +1,7 @@
 @php
 $tag = request('tag') ; 
-$info = request('info')
+$info = request('info');
+
 @endphp
 <link rel="stylesheet" href="/css/managecourse.css">
 

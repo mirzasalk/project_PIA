@@ -2,6 +2,7 @@ body {
     margin: 0; /* Uklanja marginu */
     padding: 0; /* Uklanja padding */
     /* Postavlja minimalnu visinu na 100vh */
+    font-family: "Dancing Script", cursive;
 }
 .logo {
     width: 100px;

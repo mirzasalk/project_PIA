@@ -48,11 +48,12 @@ class QuestionController extends Controller
         ]);
     }
     public function checkAnswer(Request $request, Course $course){
+        $formField =$request->validate([
+            'answer' => 'required',
+        ]);
         $question = Question::find($request->query('questionId'));
         
-       $request->validate([
-        'answer' => 'required',
-    ]);
+      
     $checkAnswer = ($request->answer == $question->correctAnswer) ? 1 : 0;
    
     $qNum = $request->query('qNum');

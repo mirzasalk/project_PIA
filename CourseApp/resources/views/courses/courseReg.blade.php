@@ -18,31 +18,13 @@ $num = 1;
 <h5><strong>Vreme trajanja kursa:</strong> {{$course->duration}}h</h5>
 </div>
 </div>
-@auth
-@if ($registrations)
-<div class="BtnsDiv">
-    <a href="/coursLessonsShow/{{$course->id}}"><button class="LiteraturaBtn">Literatura</button></a>
-    <a href="/courses/{{$course->id}}/?tag=kviz"><button class="kvizBtn">Kviz</button></a>
-</div>
-@else
-<div class="BtnsDiv">
-    <form method="POST" action="/registration/{{$course->id}}">
-        @csrf
-        @method("PUT")
-        <button class="LiteraturaBtn">Prijavi se</button>
-    </form>  
-</div>
-@endif
 
-
-
-@else
    <div class="InfoDiv">
     <p>Da bi mogli da dobijete <strong>lekcije</strong> ovog kursa i da bi mogli da radite <strong>kviz</strong> kursa potrebno je da izvrsite prijavu </p>
      <a href="/login">Prijavi se</a>
 </div>
 
-@endauth
+
 
 </div>
 </x-card>
@@ -67,4 +49,3 @@ $num = 1;
    </div>
 @endif
 </x-layout>
-
