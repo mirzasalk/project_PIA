@@ -119,7 +119,7 @@ Route::get('/addQuestionsSecond/{course}', [QuestionController::class, 'addPageS
 
 Route::get('/createNewQuestionsSecond/{course}', [QuestionController::class, 'storeSecond'])->middleware('auth');
 
-Route::put('/updateQuestions/{course}', [QuestionController::class, 'update'])->middleware('auth');
+Route::post('/updateQuestions/{course}', [QuestionController::class, 'update'])->middleware('auth');
 
 Route::put('/registration/{course}', [CourseRegistrationController::class, 'store'])->middleware('auth');
 

@@ -9,7 +9,7 @@ $questions = usort($questions, function($a, $b) {
     <div id="mainShow">
          <h1 class="naslov">Sva pitanja kursa: "<strong>{{$course->title}}</strong>"</h1>
          <div class="dodajBtn">
-            <button><a href="/addQuestionsSecond/{{$course->id}}/">Dodaj kurs</a></button>
+            <button><a href="/addQuestionsSecond/{{$course->id}}/">Dodaj pitanje</a></button>
             </div>
          <h1 class="naslovCategori">Katekorija: <strong>Laka</strong></h1>
          <div class="listaPitanjaDiv">

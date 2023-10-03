@@ -4,7 +4,7 @@
         
         <form method="post" action="/updateQuestions/{{$course->id}}/?qId={{$question->id}}">
             @csrf
-            @method("PUT")
+            
             <h2>Izmenite pitanje koje ima id: {{$question->id}}<strong></strong></h2>
             <div class="inputDiv">
                <input type="text" name="question" placeholder="Unesite pitanje" value="{{$question->question}}">
