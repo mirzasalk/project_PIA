@@ -84,9 +84,8 @@ class QuestionController extends Controller
 
     public function destroy(Request $request,Question $question){
        
-        
         $question->delete();
-        return redirect('/courses/manage',)->with('message', 'Kurs jos uvek nije formiran!');
+        return redirect('/courses/manage')->with('message', 'pitanje uspesno izbrisano!');
    }
    public function showEdit(Question $question){
     $course = Course::find($question->course_id);

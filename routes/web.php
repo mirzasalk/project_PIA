@@ -95,7 +95,7 @@ Route::post('/createLesson/{course}', [LessonController::class, 'store']);
 
 Route::get('/getLessons/{course}', [LessonController::class, 'getAllByCourseId']);
 
-Route::delete('/questionsDelete/{$item->id}', [LessonController::class, 'destroy'])->middleware('auth');
+Route::delete('/lessonDelete/{lesson}', [LessonController::class, 'destroy'])->middleware('auth');
 
 Route::get('/showHandleLessons/{lesson}', [LessonController::class, 'showHandleLessonPage'])->middleware('auth');
 
