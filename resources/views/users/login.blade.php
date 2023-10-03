@@ -4,9 +4,9 @@
     <div id="mainLogin">
         <div class="formBackground">
     <h2>Prijavi se</h2>
-   <h1>izmenjen</h1>
+   
 
-    <form method="get" action="/users/authenticate">
+    <form method="POST" action="/users/authenticate">
     @csrf
     <div class="inputDiv">
         <input type="email" name="email" placeholder="email adresa" value="{{old('email')}}">
