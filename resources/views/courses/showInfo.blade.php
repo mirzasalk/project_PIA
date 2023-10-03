@@ -157,7 +157,7 @@ $questions = usort($questions, function($a, $b) {
          
          <div class="listaKorisnikaKursa">
            
-            @if (!$registration->isEmpty())
+            @if (count($registration)=0)
             @foreach ($registration as $item)
                 
             <div class="korisnikCard">
