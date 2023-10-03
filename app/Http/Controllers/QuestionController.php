@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\CourseRegistration;
 
 
 class QuestionController extends Controller
@@ -83,10 +84,13 @@ class QuestionController extends Controller
 
     public function destroy(Request $request,Question $question){
         $course = Course::find($request->query('courseId'));
-        
+        $registration = CourseRegistration::where('course_id', $course->id)
+        ->where('user_id', auth()->user()->id)
+        ->get();
         $question->delete();
         return view('courses.showInfo', [
             'course' => $course,
+            'registration' => $registration,
             'questions'=>Question::where('course_id',$course->id)->get()
         ]);
    }
@@ -95,7 +99,7 @@ class QuestionController extends Controller
     return view('questions.edit',['question'=>$question,'course'=>$course]);
  }
  public function update(Request $request, Course $course){
-  
+    
     $question = Question::find($request->query('qId'));
     $formFields = $request->validate([
         'question' => ['required'],
@@ -108,9 +112,12 @@ class QuestionController extends Controller
     ]);
    
     $question->update($formFields);
-    
+    $registration = CourseRegistration::where('course_id', $course->id)
+    ->where('user_id', auth()->user()->id)
+    ->get();
     return view('courses.showInfo', [
         'course' => $course,
+        'registration'=>$registration,
         'questions'=>Question::where('course_id',$course->id)->get()
     ]);
 }
@@ -120,6 +127,9 @@ public function addPageShowSecond(Course $course){
 
  public function storeSecond(Request $request, Course $course){
        
+    $registration = CourseRegistration::where('course_id', $course->id)
+    ->where('user_id', auth()->user()->id)
+    ->get();
     $formFields = $request->validate([
         'question' => ['required', Rule::unique('questions', 'question')],
         'answerOne' => 'required',
@@ -140,6 +150,7 @@ public function addPageShowSecond(Course $course){
 
     return view('courses.showInfo', [
         'course' => $course,
+        'registration' => $registration,
         'questions'=>Question::where('course_id',$course->id)->get()
     ]);
 }
