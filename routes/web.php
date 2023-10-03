@@ -107,7 +107,7 @@ Route::get('/addQuestions/{course}', [QuestionController::class, 'addPageShow'])
 
 Route::get('/createNewQuestions/{course}', [QuestionController::class, 'store'])->middleware('auth');
 
-Route::post('/showKviz/{course}', [QuestionController::class, 'showKviz'])->middleware('auth');
+Route::get('/showKviz/{course}', [QuestionController::class, 'showKviz'])->middleware('auth');
 
 Route::match(['post', 'put'], '/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');
 

@@ -51,7 +51,7 @@ $num = 1;
    <div class="selectKvizLevelDiv">
        <div class="centerDiv">
         <div class="Xdiv"><a href="/courses/{{$course->id}}"><h3>X</h3></a></div>
-        <form method="post" action="/showKviz/{{$course->id}}/?questionNumber=0&userCorrectAnswe=0">
+        <form method="get" action="/showKviz/{{$course->id}}/?questionNumber=0&userCorrectAnswe=0">
             @csrf
             <div class="formDiv">
                 <h3>Izaberite kategoriju kviza</h3>
