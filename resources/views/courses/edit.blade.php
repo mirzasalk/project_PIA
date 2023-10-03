@@ -20,7 +20,7 @@
             <div class="divHelperForErrorMassage">
                <input type="text" name="title" placeholder="title" value="{{$course->title}}">
                @error('title')
-                   <p class="error">{{$message}}</p>
+                   <p class="error">Unesite naslov</p>
                 @enderror
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="divHelperForErrorMassage">
             <input type="textarea" name="description" placeholder="description" value="{{$course->description}}">
             @error('description')
-                <p class="error">{{$message}}</p>
+                <p class="error">Unesite opis</p>
             @enderror
             </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="divHelperForErrorMassage">
             <input type="text" name="tags" placeholder="tags" value="{{$course->tags}}">
             @error('tags')
-                <p class="error">{{$message}}</p>
+                <p class="error">Unesite tagove</p>
             @enderror
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="divHelperForErrorMassage">
             <input type="number" name="duration" placeholder="duration" value="{{$course->duration}}">
             @error('duration')
-                <p class="error">{{$message}}</p>
+                <p class="error">Unesite vreme trajanja</p>
             @enderror
             </div>
         </div>
@@ -64,7 +64,7 @@
 
 
                 @error('image')
-                    <p class="error">{{$message}}</p>
+                    <p class="error">Unesite sliku</p>
                 @enderror
             </div>
         </div>

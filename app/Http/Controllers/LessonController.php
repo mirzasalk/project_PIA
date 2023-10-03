@@ -16,7 +16,7 @@ class LessonController extends Controller
    public function store(Request $request,Course $course){
     
     $formFields = $request->validate([
-        'title' => ['required', Rule::unique('courses', 'title')],
+        'title' => 'required',
         'content' => 'required',
        
     ]);

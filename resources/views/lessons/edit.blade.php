@@ -12,7 +12,7 @@
             <div class="divHelperForErrorMassage">
                <input type="text" name="title" placeholder="title" value="{{$lesson->title}}">
                @error('title')
-                   <p class="error">{{$message}}</p>
+                   <p class="error">Unesite naslov</p>
                 @enderror
             </div>
         </div>
@@ -26,7 +26,7 @@
 
 
                 @error('image')
-                    <p class="error">{{$message}}</p>
+                    <p class="error">Unesite sliku</p>
                 @enderror
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <textarea name="content" id="" cols="45" rows="3"  placeholder="Sadrzaj" >{{$lesson->content}}</textarea>
             
             @error('content')
-                <p class="error">{{$message}}</p>
+                <p class="error">Unesite sadrzaj</p>
             @enderror
             </div>
         </div>

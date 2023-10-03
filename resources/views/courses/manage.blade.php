@@ -9,7 +9,7 @@ $info = request('info');
 
     <div class="userCourses">
         <div class="dodajBtn">
-        <button><a href="/courses/create">Dodaj kurs</a></button>
+        <button><a href="/courses">Dodaj kurs</a></button>
         </div>
         @unless ($courses->isEmpty())
             
