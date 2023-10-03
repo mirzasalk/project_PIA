@@ -5,7 +5,7 @@
     <div class="formBackground">
     <h2>Regstruj se</h2>
     
-    <form method="POST" action="/users">
+    <form method="get" action="/users">
     @csrf
 
     <div class="inputDiv">

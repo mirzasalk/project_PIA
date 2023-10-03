@@ -22,8 +22,8 @@ $niz = [0,0,0,0]
             <h1>{{$questions[$questionNumber-1]->question}}</h1>
           </div>
           <div class="pomoc" ><button name="50/50" id="dugme50/50">50/50</button></div>
-          <form method="POST" class="formApprove" action="/checkAnswer/{{$course->id}}/?questionId={{$questions[$questionNumber-1]->id}}&qNum={{$questionNumber}}&userCorrectAnswe={{$userCorrectAnswe}}&showNextDiv=1">
-              @method("PUT")
+          <form method="get" class="formApprove" action="/checkAnswer/{{$course->id}}/?questionId={{$questions[$questionNumber-1]->id}}&qNum={{$questionNumber}}&userCorrectAnswe={{$userCorrectAnswe}}&showNextDiv=1">
+              
               @csrf
               <div class="answersDiv">
               <div class="answerDiv" id="odgovor1">
@@ -68,7 +68,7 @@ $niz = [0,0,0,0]
             <h1>{{$questions[$questionNumber-1]->question}}</h1>
           </div>
          
-          <form  class="formSledecePitanje" method="post" action="/showKviz/{{$course->id}}/?questionNumber={{$questionNumber}}&userCorrectAnswe={{$userCorrectAnswe}}">
+          <form  class="formSledecePitanje" method="get" action="/showKviz/{{$course->id}}/?questionNumber={{$questionNumber}}&userCorrectAnswe={{$userCorrectAnswe}}">
               @csrf
               <input type="hidden" name="category" value="{{$questions[$questionNumber-1]->category}}">
               <div class="answersDiv">

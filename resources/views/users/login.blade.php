@@ -6,7 +6,7 @@
     <h2>Prijavi se</h2>
    
 
-    <form method="POST" action="/users/authenticate">
+    <form method="get" action="/users/authenticate">
     @csrf
     <div class="inputDiv">
         <input type="email" name="email" placeholder="email adresa" value="{{old('email')}}">
