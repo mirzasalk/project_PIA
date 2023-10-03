@@ -85,9 +85,6 @@ class QuestionController extends Controller
     public function destroy(Request $request,Question $question){
        
         
-        $registration = CourseRegistration::where('course_id', $question->course_id)
-        ->where('user_id', auth()->user()->id)
-        ->get();
         $question->delete();
         return redirect('/courses/manage',)->with('message', 'Kurs jos uvek nije formiran!');
    }
