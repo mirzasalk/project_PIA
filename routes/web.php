@@ -109,7 +109,7 @@ Route::get('/createNewQuestions/{course}', [QuestionController::class, 'store'])
 
 Route::get('/showKviz/{course}', [QuestionController::class, 'showKviz'])->middleware('auth');
 
-Route::match(['post', 'put'], '/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');
+Route::get('/checkAnswer/{course}', [QuestionController::class, 'checkAnswer'])->middleware('auth');
 
 Route::delete('/questionsDelete/{question}', [QuestionController::class, 'destroy'])->middleware('auth');
 

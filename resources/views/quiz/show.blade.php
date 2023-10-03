@@ -68,7 +68,7 @@ $niz = [0,0,0,0]
             <h1>{{$questions[$questionNumber-1]->question}}</h1>
           </div>
          
-          <form  class="formSledecePitanje" method="get" action="/showKviz/{{$course->id}}/?questionNumber={{$questionNumber}}&userCorrectAnswe={{$userCorrectAnswe}}">
+          <form  class="formSledecePitanje" method="post" action="/showKviz/{{$course->id}}/?questionNumber={{$questionNumber}}&userCorrectAnswe={{$userCorrectAnswe}}">
               @csrf
               <input type="hidden" name="category" value="{{$questions[$questionNumber-1]->category}}">
               <div class="answersDiv">
