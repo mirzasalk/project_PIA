@@ -50,7 +50,7 @@ class QuestionController extends Controller
             ]);
         
 } else {
-    return redirect('/courses',)->with('message', 'Kurs jos uvek nije formiran!');
+    return redirect('/courses/manage',)->with('message', 'Kurs jos uvek nije formiran!');
 }
        
     }
@@ -83,16 +83,13 @@ class QuestionController extends Controller
     }
 
     public function destroy(Request $request,Question $question){
-        $course = Course::find($request->query('courseId'));
-        $registration = CourseRegistration::where('course_id', $course->id)
+       
+        
+        $registration = CourseRegistration::where('course_id', $question->course_id)
         ->where('user_id', auth()->user()->id)
         ->get();
         $question->delete();
-        return view('courses.showInfo', [
-            'course' => $course,
-            'registration' => $registration,
-            'questions'=>Question::where('course_id',$course->id)->get()
-        ]);
+        return redirect('/courses/manage',)->with('message', 'Kurs jos uvek nije formiran!');
    }
    public function showEdit(Question $question){
     $course = Course::find($question->course_id);
