@@ -37,15 +37,21 @@ class QuestionController extends Controller
         return view('questions.create',['course'=>$course]);
     }
     public function showKviz(Request $request, Course $course){
-     
-        return view('quiz.show', [
-            'questionNumber'=>$request->query('questionNumber')+1,
-            'userCorrectAnswe'=>$request->query('userCorrectAnswe'),
-            'showNextDiv'=>0,
-            'course' => $course,
-            'questions' => Question::all()->where('course_id', $course->id)
-    ->where('category', $request->category),    
-        ]);
+        $questions =Question::all()->where('course_id', $course->id)
+        ->where('category', $request->category);
+        if ($questions->count() > 0) {
+            return view('quiz.show', [
+                'questionNumber'=>$request->query('questionNumber')+1,
+                'userCorrectAnswe'=>$request->query('userCorrectAnswe'),
+                'showNextDiv'=>0,
+                'course' => $course,
+                'questions' => $questions,    
+            ]);
+        
+} else {
+    return redirect('/courses',)->with('message', 'Kurs jos uvek nije formiran!');
+}
+       
     }
     public function checkAnswer(Request $request, Course $course){
         $formField =$request->validate([

@@ -4,7 +4,7 @@
     <div id="createMain">
 <form method="POST" action="/courses" enctype="multipart/form-data">
     @csrf
-    <h1>Ovde sam</h1>
+   
     <h2>Kreiraj novi kurs</h2>
     <div class="inputDiv">
     
