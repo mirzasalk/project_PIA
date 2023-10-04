@@ -45,7 +45,7 @@ public function getAllByCourseId(Course $course){
 
 public function destroy(Lesson $lessons){
     $lessons->delete();
-   return redirect("/getLessons/$lessons->course_id")->with('message', 'Lekcija je uspesno izbrisana!');
+   return redirect("/courses/manage")->with('message', 'Lekcija je uspesno izbrisana!');
 }
 public function update(Request $request, Lesson $lesson){
     // dd($request->all());

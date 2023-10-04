@@ -47,6 +47,7 @@ $questions = usort($questions, function($a, $b) {
                     <form method="post" action="/questionsDelete/{{$item->id}}/?courseId={{$course->id}}">
                         @csrf
                         @method("DELETE")
+                        
                         <button class="qDeleteBtn">izbrisi</button>
                     </form>
                 </div>

@@ -40,7 +40,8 @@ $tag2 = request('tag2');
           <div class="deleteCenter">
             <h3><strong>Jeste li sigurni da želite da izbrisete lekciju?</strong></h3>
             <div class="deleteBtnDiv">
-                <form method="post" action="/lessons/{{$tag}}">
+             
+                <form method="post" action="/lessonDelete/{{$tag}}">
                     @csrf
                     @method("DELETE")
                     <button class="deleteBtn">Izbrisi</button>
